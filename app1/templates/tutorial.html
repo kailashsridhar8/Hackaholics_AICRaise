@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials_Alphabets</title>
+</head>
+<body>
+    <div class="container d-flex h-100">
+        <div class="col-12 justify-content-center align-items-center"><br>
+            <div class="card">
+                    <div class="card-header bg-success">
+                            <h4 class="text-light">Tutorials :</h4>
+                    </div>
+                    <div class="col-12">
+                        <iframe class="col-12 justify-content-center" height="320" src="https://www.youtube.com/embed/hEgO047GxaQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>      
+                    </div>
+                    <form action="{% url 'quiz' %}" class="container text-center border p-5">
+                        <h5>Are you confident enough to take the Quiz? if 'Yes'</h5>
+                        <button type="submit" class="btn btn-outline-success">Proceed</button>
+                    <form>
+                        <hr>
+            <ul class="list-inline text-center">
+                <li class="list-inline-item  text-danger">Credits:</li>
+                <li class="list-inline-item ">Team Alphabets</li>
+            </ul> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

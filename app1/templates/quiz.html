@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz_Alphabets</title>
+</head>
+<body>
+    <div class="container d-flex h-100">
+        <div class="col-12 justify-content-center align-items-center"><br>
+            <!-- <h4 class="text-success text-center"></h4> -->
+            <div class="card">
+                    <div class="card-header bg-success">
+                            <h4 class="text-light">Quiz</h4>
+                    </div><hr>
+                    <div class="container">
+                        {%for list in ques_list%}
+                        <h4 class="text-center">{{list}}</h4>
+                        <input type="text" class="form-control mb-5" placeholder="Enter your answer" name="" id="">
+                        {% endfor %}
+                        <hr>
+                    </div>    
+                    <hr>
+            <ul class="list-inline text-center">
+                <li class="list-inline-item  text-danger">Credits:</li>
+                <li class="list-inline-item ">Team Alphabets</li>
+            </ul> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

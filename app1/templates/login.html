@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Paper_correction_app</title>
+</head>
+<body>
+     <div class="container-fluid con">
+            <div class="col-8 d-none d-md-block side-left">
+                <div class="sid-layy">
+                    <div class="row slid-roo">
+                        <div class="data-portion">
+                            <h2>Educate to Glory</h2>
+                            <p>“Keep away from people who try to belittle your ambitions. Small people always do that, but the really great make you feel that you, too, can become great.”</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 side-right">
+                <div class="card">
+                    <div class="card-header bg-success">
+                        <h4 class="text-light">LOGIN</h4>
+                    </div>
+                <form class="text-center border p-5" method="POST">
+                    {% csrf_token %}
+                    <input type="text" id="loginemail" name="username" placeholder="Username" class="form-control mb-3">
+                    <input type="password" id="loginpassword" name="password" placeholder="Password" class="form-control mb-3">
+                    <p>
+                        <a class="nav-link text-success" href="">Forget password?</a>
+                    </p>
+                    <button class="btn btn-outline-success btn-block my-3" type="submit">Sign In</button>
+                </form>
+                <br>
+                <ul class="list-inline">
+                    <li class="list-inline-item  text-danger">Credits:</li>
+                    <li class="list-inline-item">Team Alphabets</li>
+                </ul>
+                </div>
+            </div>
+            <footer class="footer fixed-bottom">
+                <div class="footer-copyright text-center text-dark">&copy;<span id="year"></span>
+                    <a class="text-danger" href="#">Alphabets</a>
+                    Copyrights Reserved.
+                </div>
+            </footer>
+        </div>   
+        <script>
+              document.getElementById("year").innerHTML = new Date().getFullYear();
+        </script>
+</body>
+</html>

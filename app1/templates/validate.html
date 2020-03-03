@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Med_Help_Alphabets</title>
+</head>
+<body>
+    <div class="container d-flex h-100">
+    <div class="col-8 justify-content-center align-items-center"><br>
+        <div class="card">
+                <div class="card-header bg-success">
+                        <h4 class="text-light">Find Your Medicine</h4> <label class="text-danger" for="">(or) </label><form action="{% url 'index' %}">
+                            <button type="submit" class="btn btn-outline-light text-warning" >Paper Correction</button></form>
+                            <label class="text-danger" for="">(or) </label><form action="{% url 'tutorial' %}">
+                                <button type="submit" class="btn btn-outline-light text-warning" >Tutorials</button></form>
+                        
+                </div>
+        <form class="container text-center border p-5" action="{% url 'file_upload' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <hr>
+            <label class="btn btn-success">
+                Choose your File<input class="btn-success" type="file" name="document" hidden required>
+                <button type="submit"  class="btn btn-outline-light text-warning">Upload</button>
+            </label><hr>
+            {% if url %}
+                <p class="text-info">Uploaded file: <a class="nav-link text-success" href="{{ url }}">{{ url }}</a></p>
+            {% endif %}
+            <p class="text-danger text-center">(or)</p>
+        </form>
+        <form action="{% url 'medic_search' %}" class="text-center border p-5" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label class="text-center">To know price:</label>
+            <input class="form-control mb-3" type="text" name="search" placeholder="search">
+            <button class="btn btn-outline-success btn-block my-3" type="submit" name="show">Process</button>
+        </form>
+        <div class="container">  
+        {% if med_name %}
+        <Label class="text-success"Price Details></Label>
+        <h5 class="text-danger">{{med_name}}</h5>
+        <p class="text-warning">{{quantity}} - {{price}}</p>
+         {% endif %} 
+         <br>
+        </div>
+        <ul class="list-inline text-center">
+            <li class="list-inline-item  text-danger">Credits:</li>
+            <li class="list-inline-item ">Team Alphabets</li>
+        </ul> 
+</div>
+</div>
+</body>
+</html>
